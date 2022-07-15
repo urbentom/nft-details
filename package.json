@@ -9,6 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.2.4",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@metaplex-foundation/beet": "^0.4.0",
+    "@metaplex-foundation/mpl-candy-machine": "^4.3.0",
+    "@metaplex-foundation/mpl-core": "^0.6.1",
+    "@solana/spl-token": "^0.2.0",
+    "@solana/web3.js": "^1.48.0",
+    "base-58": "^0.0.1",
+    "borsh": "^0.7.0",
+    "framer-motion": "^6",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
