@@ -1,12 +1,12 @@
 import React from "react";
-import { CandyMachine } from "@metaplex-foundation/mpl-candy-machine";
-import beet from "@metaplex-foundation/beet";
+import { CandyMachineData } from "../../utils/account";
 import {
   Box,
   Heading,
   Input,
   Button,
   Image,
+  Text,
   Spinner,
   Flex,
 } from "@chakra-ui/react";
@@ -14,7 +14,7 @@ import {
 interface AccountDetailsViewProps {
   loading: boolean;
   error: Error | undefined;
-  data: CandyMachine | undefined;
+  data: CandyMachineData | undefined;
 }
 
 const AccountDetailsView: React.FC<AccountDetailsViewProps> = (props) => {
@@ -32,9 +32,15 @@ const AccountDetailsView: React.FC<AccountDetailsViewProps> = (props) => {
       </Flex>
     );
 
-  console.log("data", props.data?.pretty());
-  console.log("Price", beet.i256.read(props.data?.data.price, 0));
-  return <Flex justifyContent="center" alignItems="center"></Flex>;
+  return (
+    <Flex justifyContent="center" alignItems="center">
+      <Box>
+        <Heading>Account Details</Heading>
+        <Text>Wallet: {props.data?.treasuryWallet ?? ""}</Text>
+        <Text>Mint Authority: {props.data?.mintyAuthority ?? ""}</Text>
+      </Box>
+    </Flex>
+  );
 };
 
 export default AccountDetailsView;
